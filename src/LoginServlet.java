@@ -28,13 +28,14 @@ public class LoginServlet extends HttpServlet {
         System.out.println("得到客户机请求方式: " + request.getMethod());
         String html = null;
   
-        if ("李贺".equals(name) && "123".equals(password))
+        if ("admin".equals(name) && "123".equals(password))
         	request.getRequestDispatcher("success.html").forward(request, response);
+        	//response.sendRedirect("success.html");
         else
         	response.sendRedirect("fail.html");
         response.setContentType("text/html; charset=UTF-8");
-        PrintWriter pw = response.getWriter();
-        pw.println(html);
+        //PrintWriter pw = response.getWriter();
+        //pw.println(html);
         System.out.println("name:" + name);
   
     }
